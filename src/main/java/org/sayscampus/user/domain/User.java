@@ -60,4 +60,12 @@ public class User {
 	public int hashCode() {
 		return Objects.hashCode(id);
 	}
+
+	public int followingCount() {
+		return followingCount.getCount();
+	}
+
+	public int followerCount() {
+		return followerCounter.getCount();
+	}
 }
