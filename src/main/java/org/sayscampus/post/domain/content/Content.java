@@ -15,7 +15,7 @@ public abstract class Content {
 	public void updateContent(String contentText) {
 		checkText(contentText);
 		this.contentText = contentText;
-		this.datetimeInfo.updateEditDateTime();
+		this.datetimeInfo.updateEditDatetime();
 	}
 
 	protected abstract void checkText(String contentText);

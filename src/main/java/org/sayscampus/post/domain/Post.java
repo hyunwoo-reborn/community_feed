@@ -1,6 +1,7 @@
 package org.sayscampus.post.domain;
 
 import org.sayscampus.common.domain.PositiveIntegerCounter;
+import org.sayscampus.post.domain.content.Content;
 import org.sayscampus.post.domain.content.PostContent;
 import org.sayscampus.post.domain.content.PostPublicationState;
 import org.sayscampus.user.domain.User;
@@ -46,4 +47,11 @@ public class Post {
 		this.content.updateContent(updatedContent);
 	}
 
+	public int getLikeCount() {
+		return likeCount.getCount();
+	}
+
+	public String getContent() {
+		return content.getContentText();
+	}
 }

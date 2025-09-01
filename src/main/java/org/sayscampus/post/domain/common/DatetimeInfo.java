@@ -12,7 +12,7 @@ public class DatetimeInfo {
 		this.dateTime = LocalDateTime.now();
 	}
 
-	public void updateEditDateTime() {
+	public void updateEditDatetime() {
 		this.isEdited = true;
 		this.dateTime = LocalDateTime.now();
 	}
@@ -24,4 +24,5 @@ public class DatetimeInfo {
 	public LocalDateTime getDateTime() {
 		return dateTime;
 	}
+
 }
