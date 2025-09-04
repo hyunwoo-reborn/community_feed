@@ -4,20 +4,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.sayscampus.fake.FakeObjectFactory;
 import org.sayscampus.user.application.dto.CreateUserRequestDto;
 import org.sayscampus.user.application.dto.FollowUserRequestDto;
-import org.sayscampus.user.application.interfaces.UserRelationRepository;
-import org.sayscampus.user.application.interfaces.UserRepository;
 import org.sayscampus.user.domain.User;
-import org.sayscampus.user.repository.FakeUserRelationRepository;
-import org.sayscampus.user.repository.FakeUserRepository;
 
 class UserRelationServiceTest {
 
-	private final UserRepository userRepository = new FakeUserRepository();
-	private final UserService userService = new UserService(userRepository);
-	private final UserRelationRepository userRelationRepository = new FakeUserRelationRepository();
-	private final UserRelationService userRelationService = new UserRelationService(userService, userRelationRepository);
+	private final UserService userService = FakeObjectFactory.getUserService();
+	private final UserRelationService userRelationService = FakeObjectFactory.userRelationService();
 
 	private User user1;
 	private User user2;

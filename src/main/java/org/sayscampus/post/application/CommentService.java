@@ -12,15 +12,15 @@ import org.sayscampus.user.domain.User;
 
 public class CommentService {
 
-	private final CommentRepository commentRepository;
 	private final UserService userService;
 	private final PostService postService;
+	private final CommentRepository commentRepository;
 	private final LikeRepository likeRepository;
 
-	public CommentService(CommentRepository commentRepository, UserService userService, PostService postService, LikeRepository likeRepository) {
-		this.commentRepository = commentRepository;
+	public CommentService(UserService userService, PostService postService, CommentRepository commentRepository, LikeRepository likeRepository) {
 		this.userService = userService;
 		this.postService = postService;
+		this.commentRepository = commentRepository;
 		this.likeRepository = likeRepository;
 	}
 
@@ -61,9 +61,9 @@ public class CommentService {
 		User user = userService.getUser(dto.userId());
 
 		if (likeRepository.checkLike(comment, user)) {
-			comment.like(user);
-			likeRepository.like(comment, user);
+			comment.unlike();
+			likeRepository.unlike(comment, user);
 		}
 	}
-	
+
 }

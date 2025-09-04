@@ -3,16 +3,14 @@ package org.sayscampus.user.application;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.sayscampus.fake.FakeObjectFactory;
 import org.sayscampus.user.application.dto.CreateUserRequestDto;
-import org.sayscampus.user.application.interfaces.UserRepository;
 import org.sayscampus.user.domain.User;
 import org.sayscampus.user.domain.UserInfo;
-import org.sayscampus.user.repository.FakeUserRepository;
 
 class UserServiceTest {
 
-	private final UserRepository userRepository = new FakeUserRepository();
-	private final UserService userService = new UserService(userRepository);
+	private final UserService userService = FakeObjectFactory.getUserService();
 
 	@Test
 	void givenUserInfoDto_whenCreateUser_thenCanFindUser() {
