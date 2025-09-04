@@ -6,6 +6,13 @@ import org.sayscampus.post.domain.content.CommentContent;
 import org.sayscampus.post.domain.content.Content;
 import org.sayscampus.user.domain.User;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+@AllArgsConstructor
 public class Comment {
 
 	private final Long id;

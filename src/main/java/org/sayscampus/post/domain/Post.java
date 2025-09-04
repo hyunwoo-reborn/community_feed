@@ -6,6 +6,13 @@ import org.sayscampus.post.domain.content.PostContent;
 import org.sayscampus.post.domain.content.PostPublicationState;
 import org.sayscampus.user.domain.User;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+@AllArgsConstructor
 public class Post {
 
 	private final Long id;
@@ -65,14 +72,6 @@ public class Post {
 
 	public String getContent() {
 		return content.getContentText();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public User getAuthor() {
-		return author;
 	}
 
 	public Content getContentObject() {
