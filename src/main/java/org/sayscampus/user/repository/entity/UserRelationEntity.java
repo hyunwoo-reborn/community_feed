@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@IdClass(UserRelationId.class)
+@IdClass(UserRelationIdEntity.class)
 public class UserRelationEntity extends TimeBaseEntity {
 
 	@Id

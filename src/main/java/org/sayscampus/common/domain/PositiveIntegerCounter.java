@@ -1,7 +1,5 @@
 package org.sayscampus.common.domain;
 
-import org.sayscampus.user.domain.User;
-
 public class PositiveIntegerCounter {
 	private int count;
 

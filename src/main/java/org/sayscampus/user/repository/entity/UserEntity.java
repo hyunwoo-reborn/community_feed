@@ -1,5 +1,6 @@
 package org.sayscampus.user.repository.entity;
 
+import org.hibernate.annotations.DynamicUpdate;
 import org.sayscampus.common.domain.PositiveIntegerCounter;
 import org.sayscampus.common.repository.entity.TimeBaseEntity;
 import org.sayscampus.user.domain.User;
@@ -19,6 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@DynamicUpdate
 public class UserEntity extends TimeBaseEntity {
 
 	@Id

@@ -3,7 +3,9 @@ package org.sayscampus.user.application;
 import org.sayscampus.user.application.dto.FollowUserRequestDto;
 import org.sayscampus.user.application.interfaces.UserRelationRepository;
 import org.sayscampus.user.domain.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserRelationService {
 
 	private final UserService userService;

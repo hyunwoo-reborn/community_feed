@@ -1,10 +1,13 @@
 package org.sayscampus.user.application;
 
 import org.sayscampus.user.application.dto.CreateUserRequestDto;
+import org.sayscampus.user.application.dto.GetUserResponseDto;
 import org.sayscampus.user.application.interfaces.UserRepository;
 import org.sayscampus.user.domain.User;
 import org.sayscampus.user.domain.UserInfo;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
 
 	private final UserRepository userRepository;
@@ -23,4 +26,8 @@ public class UserService {
 		return userRepository.findById(id);
 	}
 
+	public GetUserResponseDto getUserProfile(Long id) {
+		User user = getUser(id);
+		return new GetUserResponseDto(user);
+	}
 }
