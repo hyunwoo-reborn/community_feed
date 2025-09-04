@@ -4,12 +4,22 @@ import java.util.Objects;
 
 import org.sayscampus.common.domain.PositiveIntegerCounter;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+@Builder
+@Getter
+@AllArgsConstructor
 public class User {
 
-	private final Long id;
+	private Long id;
+
 	private UserInfo info;
-	private final PositiveIntegerCounter followingCount;
-	private final PositiveIntegerCounter followerCounter;
+
+	private PositiveIntegerCounter followingCount;
+
+	private PositiveIntegerCounter followerCounter;
 
 	public User(Long id, UserInfo userInfo) {
 		this.id = id;
@@ -44,10 +54,6 @@ public class User {
 		followerCounter.decrease();
 	}
 
-	public Long getId() {
-		return id;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (o == null || getClass() != o.getClass())
@@ -69,8 +75,12 @@ public class User {
 		return followerCounter.getCount();
 	}
 
-	public UserInfo getInfo() {
-		return info;
+	public String getProfileImage() {
+		return info.getProfileImageUrl();
+	}
+
+	public String getName() {
+		return info.getName();
 	}
 
 }

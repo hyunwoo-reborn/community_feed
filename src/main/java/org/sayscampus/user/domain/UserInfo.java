@@ -1,5 +1,8 @@
 package org.sayscampus.user.domain;
 
+import lombok.Getter;
+
+@Getter
 public class UserInfo {
 
 	private final String name;
@@ -14,11 +17,4 @@ public class UserInfo {
 		this.profileImageUrl = profileImageUrl;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public String getProfileImageUrl() {
-		return profileImageUrl;
-	}
 }

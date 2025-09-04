@@ -1,0 +1,17 @@
+services:
+  master_db:
+    image: mysql:8.0
+    container_name: community_master_db
+    restart: always
+    ports:
+      - '3316:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      TZ: Asia/Seoul
+    volumes:
+      - community_db_master:/var/lib/mysql
+      - ./db/mysql/init:/docker-entrypoint-initdb.d
+    platform: linux/x86_64
+
+volumes:
+  community_db_master:
