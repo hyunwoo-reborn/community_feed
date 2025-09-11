@@ -2,12 +2,15 @@ package org.sayscampus.post.application;
 
 import org.sayscampus.post.application.dto.CreatePostRequestDto;
 import org.sayscampus.post.application.dto.LikeRequestDto;
+import org.sayscampus.post.application.dto.UpdatePostRequestDto;
 import org.sayscampus.post.application.interfaces.LikeRepository;
 import org.sayscampus.post.application.interfaces.PostRepository;
 import org.sayscampus.post.domain.Post;
 import org.sayscampus.user.application.UserService;
 import org.sayscampus.user.domain.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PostService {
 
 	private final UserService userService;
@@ -23,7 +26,7 @@ public class PostService {
 	}
 
 	public Post getPost(Long id) {
-		return postRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+		return postRepository.findById(id);
 	}
 
 	public Post createPost(CreatePostRequestDto dto) {
@@ -32,8 +35,8 @@ public class PostService {
 		return postRepository.save(post);
 	}
 
-	public Post updatePost(Long id, CreatePostRequestDto dto) {
-		Post post = getPost(id);
+	public Post updatePost(Long postId, UpdatePostRequestDto dto) {
+		Post post = getPost(postId);
 		User user = userService.getUser(dto.userId());
 
 		post.updatePost(user, dto.content(), dto.state());

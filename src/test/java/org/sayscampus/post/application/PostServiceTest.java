@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.sayscampus.post.application.dto.LikeRequestDto;
+import org.sayscampus.post.application.dto.UpdatePostRequestDto;
 import org.sayscampus.post.domain.Post;
+import org.sayscampus.post.domain.content.PostPublicationState;
 
 class PostServiceTest extends PostApplicationTestTemplate {
 
@@ -24,7 +26,8 @@ class PostServiceTest extends PostApplicationTestTemplate {
 		Post savedPost = postService.createPost(postRequestDto);
 
 		// When
-		Post updatedPost = postService.updatePost(savedPost.getId(), postRequestDto);
+        UpdatePostRequestDto updateDto = new UpdatePostRequestDto(savedPost.getId(), user.getId(), "updated-content", PostPublicationState.PRIVATE);
+        Post updatedPost = postService.updatePost(savedPost.getId(), updateDto);
 
 		// Then
 		assertEquals(savedPost.getId(), updatedPost.getId());
