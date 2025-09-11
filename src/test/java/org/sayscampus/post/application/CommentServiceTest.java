@@ -8,7 +8,7 @@ import org.sayscampus.post.application.dto.LikeRequestDto;
 import org.sayscampus.post.application.dto.UpdateCommentRequestDto;
 import org.sayscampus.post.domain.comment.Comment;
 
-public class CommentServiceTest extends PostApplicationTestTemplate {
+class CommentServiceTest extends PostApplicationTestTemplate {
 
 	@Test
 	void givenCreateCommentRequestDto_whenCreateComment_thenReturnComment() {
