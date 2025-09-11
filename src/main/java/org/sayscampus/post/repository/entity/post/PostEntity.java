@@ -41,10 +41,11 @@ public class PostEntity extends TimeBaseEntity {
 
 	@Convert(converter = PostPublicationStateConverter.class)
 	private PostPublicationState state;
+
 	private Integer likeCount;
 
 	@ColumnDefault("0")
-	private int commentCounter;
+	private int commentCount;
 
 	public PostEntity(Post post) {
 		this.id = post.getId();

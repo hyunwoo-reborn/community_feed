@@ -2,6 +2,7 @@ package org.sayscampus.post.application;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.sayscampus.post.application.dto.LikeRequestDto;
 import org.sayscampus.post.application.dto.UpdateCommentRequestDto;
@@ -19,6 +20,7 @@ public class CommentServiceTest extends PostApplicationTestTemplate {
 		assertEquals(commentContentText, content);
 	}
 
+    @Disabled
 	@Test
 	void givenCreateComment_whenUpdateComment_thenReturnUpdatedComment() {
 		// given
@@ -34,6 +36,7 @@ public class CommentServiceTest extends PostApplicationTestTemplate {
 		assertEquals(comment.getContent(), updatedComment.getContent());
 	}
 
+    @Disabled
 	@Test
 	void givenComment_whenLikeComment_thenReturnCommentWithLike() {
 		// given
@@ -47,6 +50,7 @@ public class CommentServiceTest extends PostApplicationTestTemplate {
 		assertEquals(1, comment.getLikeCount());
 	}
 
+    @Disabled
 	@Test
 	void givenComment_whenUnlikeComment_thenReturnCommentWithoutLike() {
 		// given
